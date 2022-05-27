@@ -1,0 +1,13 @@
+#parent{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+
+}
+#parent>div{
+width: 500px;
+}
+
+#parent>div>p{
+    font-weight: bold;
+}

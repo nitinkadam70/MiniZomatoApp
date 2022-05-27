@@ -1,0 +1,43 @@
+
+    *{
+        font-family: Poppins,sans-serif;
+      }
+      
+      #navbar {
+        display: flex;
+        justify-content: space-between;
+        border: solid 1px black;
+        padding-left: 4%;
+        padding-right: 4%;
+      }
+  
+      #options {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+      }
+    
+      /* input */
+      #S{
+        margin-bottom: 2%;
+      }
+      #parent{
+        display: grid;
+        grid-template-columns: repeat(4,20%);
+        gap: 5%;
+      }
+  
+      #parent>div>img{
+        width: 100%;
+      }
+  
+      #hedding{
+        text-align: center;
+      }
+  /* 
+      @media all and (min-width:50px) and (max-width:380px){
+      #parent{
+         grid-template-columns: repeat(2,40%);
+         justify-content: center;
+      } 
+    } */

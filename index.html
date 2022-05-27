@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./styles/index.css">
+
+<body>
+    <div id="header"></div>
+    <div id="S">
+        <form action="">
+            <h2>Find Meals For Your Ingredient</h2>
+            <input type="text" placeholder="Search" id="search">
+            <input type="submit" id="submit" value="search">
+        </form>
+        <h1 id="hedding">Latest recipes</h1>
+    </div>
+    <div id="parent"></div>
+</body>
+
+</html>
+<script type="module">
+
+    //navbar
+    import navbar from "./components/navbar.js"
+    console.log(navbar);
+
+    let header = document.getElementById("header");
+    header.innerHTML = navbar();
+
+    //data
+    import { getData, append } from "./scripts/fetchAppend.js"
+    //console.log(getData,append)
+
+
+    //latest 
+    let response = await getData(`https://www.themealdb.com/api/json/v1/1/search.php?s`)
+    let parent = document.getElementById("parent")
+    append(response.meals, parent);
+
+    document.querySelector("form").addEventListener("submit", async () => {
+
+        event.preventDefault();
+        let inp = document.getElementById("search").value
+        console.log(inp)
+        let response = await getData(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inp}`)
+        //console.log(response);
+
+        let parent = document.getElementById("parent")
+        append(response.meals, parent);
+    });
+   
+</script>

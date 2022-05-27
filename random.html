@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,31 +8,28 @@
     <title>Document</title>
 </head>
 <link rel="stylesheet" href="./styles/index.css">
-<link rel="stylesheet" href="./styles/day.css">
+<link rel="stylesheet" href="./styles/ramdom.css">
 <body>
     <div id="header"></div>
-    <h1 id="hedding">Receipe of the day</h1>
     <div id="parent"></div>
-    <div id="home"></div>
-</body>
-</html>
 
+</body>
+
+</html>
 <script type="module">
     //navbar
     import navbar from "./components/navbar.js"
     let header = document.getElementById("header");
     header.innerHTML = navbar();
 
+
     //data
-    import {getData,append,append2} from "./scripts/fetchAppend.js"
+
+    import {getData,append} from "./scripts/fetchAppend.js"
 
     let response = await getData(`https://www.themealdb.com/api/json/v1/1/random.php`)
     console.log(response)
-
     let parent = document.getElementById("parent");
-    append(response.meals,parent);
-
-    let home = document.getElementById("home")
-    append2(response.meals,home)
-
+    append(response.meals,parent)
+    
 </script>

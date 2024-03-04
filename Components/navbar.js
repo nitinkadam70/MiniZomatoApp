@@ -1,6 +1,6 @@
 const navbar = () => {
 
-    return ` <div id="navbar">
+    return `<div id="navbar">
      <h3><a href="index.html">Search receipe</a></h3>
      <div id="options">
        <h3><a href="day.html">Receipe of the day</a></h3>
